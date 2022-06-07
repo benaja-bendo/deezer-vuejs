@@ -3,5 +3,5 @@ console.log('PlayList.vue');
 </script>
 
 <template>
-    <p>Je suis la PlayList</p>
+    <router-link to="/"> Back to PlayList</router-link>
 </template>
