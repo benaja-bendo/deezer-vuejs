@@ -22,11 +22,13 @@
 
 html,
 body {
-  height: 100%;
+  background-color: var(--light-grey);
+  height: 100vh;
+  max-height: 100vh;
+
 }
 
 body {
-  background-color: var(--light-grey);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }

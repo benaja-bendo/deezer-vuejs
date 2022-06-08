@@ -9,15 +9,19 @@ app.register(fastifyCors, {
 });
 
 app.get("/playlists", async (request, reply) => {
-    const response = await got("https://api.deezer.com/chart/0/playlists",{
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "Authorization": "Bearer " + process.env.DEEZER_TOKEN,
-        },
-    })
-    // const data = JSON.parse(response.body);
-    // reply.send(data.data);
+    // const response = await got("https://api.deezer.com/chart/0/playlists", {
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //         "Accept": "application/json",
+    //         "Authorization": "Bearer " + process.env.DEEZER_TOKEN,
+    //     },
+    // })
+    const response = await got('https://api.deezer.com/chart/0/playlists?limit=20');
+    reply.send(response.body);
+});
+
+app.get("/playlists/:id", async (request, reply) => {
+    const response = await got(`https://api.deezer.com/playlist/${request.params.id}`);
     reply.send(response.body);
 });
 

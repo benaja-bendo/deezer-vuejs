@@ -1,24 +1,15 @@
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue';
-//chercher les playslists chez l'api
-// afficher les playslists dans la vue
-
-const playlists = ref([]);
-onMounted(async () => {
-    const response = await fetch("http://localhost:8000/playlists")
-        .then(response => response.json());
-    playlists.value = response.data;
-});
-
-
+import { RouterLink } from 'vue-router'
+import { usePlayListQuery } from '../hooks/index';
+const { isLoadingPlaylists, playlists } = usePlayListQuery()
 </script>
 <template>
-    <p v-if="playlists.length <= 0">Chargement ... </p>
-    <ul>
+    <p v-if="isLoadingPlaylists">Chargement ... </p>
+    <ul v-else>
         <li v-for="playlist in playlists" :key="playlist.id">
-            <router-link :to="`/playlist/${playlist.id}`">
+            <RouterLink :to="`/playlist/${playlist.id}`">
                 {{ playlist.title }}
-            </router-link>
+            </RouterLink>
         </li>
     </ul>
 </template>
