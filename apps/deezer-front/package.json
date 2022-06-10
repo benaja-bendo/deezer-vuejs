@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "pinia": "^2.0.14",
     "vue": "^3.2.25",
     "vue-query": "^1.25.0",
     "vue-router": "4"

@@ -5,6 +5,7 @@ importers:
   apps/deezer-front:
     specifiers:
       '@vitejs/plugin-vue': ^2.3.3
+      pinia: ^2.0.14
       prettier: ^2.6.2
       sass: ^1.52.2
       typescript: ^4.5.4
@@ -14,6 +15,7 @@ importers:
       vue-router: '4'
       vue-tsc: ^0.34.7
     dependencies:
+      pinia: 2.0.14_typescript@4.7.3+vue@3.2.37
       vue: 3.2.37
       vue-query: 1.25.0_vue@3.2.37
       vue-router: 4.0.15_vue@3.2.37
@@ -1333,6 +1335,24 @@ packages:
   /picomatch/2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
+
+  /pinia/2.0.14_typescript@4.7.3+vue@3.2.37:
+    resolution: {integrity: sha512-0nPuZR4TetT/WcLN+feMSjWJku3SQU7dBbXC6uw+R6FLQJCsg+/0pzXyD82T1FmAYe0lsx+jnEDQ1BLgkRKlxA==}
+    peerDependencies:
+      '@vue/composition-api': ^1.4.0
+      typescript: '>=4.4.4'
+      vue: ^2.6.14 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/devtools-api': 6.1.4
+      typescript: 4.7.3
+      vue: 3.2.37
+      vue-demi: 0.10.1_vue@3.2.37
+    dev: false
 
   /pino-std-serializers/3.2.0:
     resolution: {integrity: sha512-EqX4pwDPrt3MuOAAUBMU0Tk5kR/YcCM5fNPEzgCO2zJ5HfX0vbiH9HbJglnyeQsN96Kznae6MWD47pZB5avTrg==}
