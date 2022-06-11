@@ -27,7 +27,7 @@ function queue(): void {
             <p>{{ track.artist.name }}</p>
             <div class="track__action">
                 <button @click="play">Play</button>
-                <button @click="queue">Queue</button>
+                <button @click="queue" :disabled="tracksToPlay.has(track)">Queue</button>
             </div>
         </div>
     </div>
