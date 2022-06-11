@@ -1,6 +1,7 @@
 <script  lang="ts" setup>
 import { useQueryProvider } from 'vue-query'
 import Player from './components/Player.vue';
+import QueuTrack from './components/QueuTrack.vue';
 
 useQueryProvider()
 </script>
@@ -10,7 +11,9 @@ useQueryProvider()
     <main class="main">
       <router-view />
     </main>
-    <aside class="aside"></aside>
+    <aside class="aside">
+      <QueuTrack />
+    </aside>
     <footer class="footer">
       <Player />
     </footer>

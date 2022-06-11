@@ -1,16 +1,21 @@
 <script setup lang="ts">
 import { defineProps, toRaw } from 'vue'
+import { storeToRefs } from 'pinia';
 import { usePlayerStore } from '../store';
 
-const { track } = defineProps({
+const props = defineProps({
     track: {
         type: Object,
         required: true
     }
 });
-const { playtrack } = usePlayerStore();
+const store = usePlayerStore();
+const { tracksToPlay } = storeToRefs(store);
 function play(): void {
-    playtrack(toRaw(track));
+    store.playtrack(toRaw(props.track));
+}
+function queue(): void {
+    store.queueTrack(toRaw(props.track));
 }
 </script>
 
@@ -22,6 +27,7 @@ function play(): void {
             <p>{{ track.artist.name }}</p>
             <div class="track__action">
                 <button @click="play">Play</button>
+                <button @click="queue">Queue</button>
             </div>
         </div>
     </div>
